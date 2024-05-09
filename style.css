@@ -1,0 +1,31 @@
+body {
+    background: #fddaef;
+    color: black;
+}
+
+a {
+    color: blue;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    font-style: italic;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.italic {
+    font-style: italic;
+}
+
+img {
+    max-width: 50%;
+}
