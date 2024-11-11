@@ -1,6 +1,7 @@
 body {
     background: #fddaef;
     color: black;
+    max-width: 70%;
 }
 
 a {
