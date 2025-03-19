@@ -30,3 +30,16 @@ ul {
 img {
     max-width: 50%;
 }
+
+/* main.browser-walk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+button.kickoff {}
+
+button:hover {
+    cursor: pointer;
+}
