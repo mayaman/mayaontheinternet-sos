@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Sketch Viewer</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            width: 100vw;
+            height: calc(100vh + 45px);
+            position: absolute;
+            top: -45px;
+            display: none;
+        }
+
+        .nav {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Enter a URL</h1>
+    <form onsubmit="handleSubmit(event)">
+        <label for="urlInput">URL:</label>
+        <input type="url" id="urlInput" name="url" required placeholder="Enter a valid URL">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="container">
+        <!-- The iframe will be injected here dynamically -->
+    </div>
+
+    <script>
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const url = document.getElementById("urlInput").value; // Get the URL from the input field
+            loadSketch(url); // Call the loadSketch function with the URL
+            document.getElementById("container").style.display = "block";
+        }
+
+        // Function to embed a p5.js sketch in full screen and remove the logo
+        function loadSketch(sketchUrl) {
+            const iframe = document.createElement('iframe');
+            iframe.src = sketchUrl;
+            iframe.frameborder = "0";
+            iframe.onload = function () {
+                const iframeDoc = iframe.contentWindow.document;
+                const p5jsLogo = iframeDoc.querySelector('.p5logo');
+                if (p5jsLogo) {
+                    p5jsLogo.style.display = 'none';  // Hide p5.js logo
+                }
+            };
+
+            document.getElementById('container').appendChild(iframe);
+        }
+
+        // Example: Load a p5.js sketch URL
+        // loadSketch('https://editor.p5js.org/mayaman/full/dD1E-epO9');
+        // loadSketch('https://editor.p5js.org/mayaman/full/gkTZwNNzc');
+    </script>
+</body>
+
+</html>
