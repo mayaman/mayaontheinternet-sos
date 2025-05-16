@@ -33,7 +33,7 @@
             const block = pages[currentIndex];
 
             // If the block has a 'source', assume it's a link or website.
-            if (block.class == "Image" || block.class == "Attachment" || block.class == "Link") {
+            if (block.class == "Image" || block.class == "Attachment" || block.class == "Link" || block.class == "Media") {
                 let newTab;
                 if (block.source) {
                     newTab = window.open(block.source.url, "_blank");
