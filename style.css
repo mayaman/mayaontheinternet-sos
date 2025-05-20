@@ -43,3 +43,17 @@ button.kickoff {}
 button:hover {
     cursor: pointer;
 }
+
+.fixed {
+    position: fixed;
+}
+
+#sparkles {
+    top: 2%;
+    right: 2%;
+    width: 5%;
+}
+
+#end-note {
+    height: 10px;
+}
