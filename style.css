@@ -51,9 +51,19 @@ button:hover {
 #sparkles {
     top: 2%;
     right: 2%;
-    width: 5%;
+    width: 7%;
 }
 
 #end-note {
     height: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        max-width: 90%;
+    }
+    
+    #sparkles {
+        width: 15%;
+    }
+  }
