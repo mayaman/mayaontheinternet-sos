@@ -62,8 +62,33 @@ button:hover {
     body {
         max-width: 90%;
     }
-    
+
     #sparkles {
         width: 15%;
     }
-  }
+}
+
+
+iframe.waterproof {
+    border: none;
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 7vw;
+    bottom: 1vh;
+    left: 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    iframe.waterproof {
+        border: none;
+        overflow: hidden;
+        position: fixed;
+        width: 100vw;
+        height: 10vw;
+        bottom: 10vh;
+        left: 0;
+        cursor: pointer;
+    }
+}
