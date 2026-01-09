@@ -31,11 +31,56 @@
                 return;
             }
             const block = pages[currentIndex];
-
+            console.log("Opening block:", block);
             // If the block has a 'source', assume it's a link or website.
             if (block.class == "Image" || block.class == "Attachment" || block.class == "Link" || block.class == "Media") {
                 let newTab;
-                if (block.source) {
+                if (block.class == "Image") {
+                    console.log("CREATING IMAGE")
+                    // Create a new tab with an embedded image
+                    const newTab = window.open("", "_blank");
+                    if (newTab) {
+                        newTab.document.write(`
+                            <html>
+                            <head>
+                            <title>Image</title>
+                            <style>
+                                body {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    min-height: 100vh;
+                                    margin: 0;
+                                    padding: 1em;
+                                    box-sizing: border-box;
+                                    overflow-y: auto;
+                                    background-color: #fddaef;
+                                    font-family: sans-serif;
+                                    font-weight: bold;
+                                    font-size: 5vw;
+                                }
+                                .content {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    text-align: center;
+                                    width: 100%;
+                                }
+                            </style>
+                            </head>
+
+                            <body style="margin:0; display:flex; align-items:center; justify-content:center; height:100vh;">
+                            <img src="${block.image.display.url}" alt="Image" style="max-width:100%; max-height:100%;">
+                            </body>
+                            </html>
+                        `);
+                        newTab.document.close();
+                    } else {
+                        console.warn("Popup blocked or focus could not be transferred.");
+                    }
+                }
+                else if (block.source) {
                     newTab = window.open(block.source.url, "_blank");
                 } else if (block.attachment) {
                     // Check if the attachment is a video (you may need to add a condition based on file extension or metadata)
