@@ -80,6 +80,11 @@ iframe.waterproof {
     cursor: pointer;
 }
 
+iframe.blog {
+    width: 444px;
+    height: 333px;
+}
+
 @media only screen and (max-width: 600px) {
     iframe.waterproof {
         border: none;
@@ -90,5 +95,10 @@ iframe.waterproof {
         bottom: 10vh;
         left: 0;
         cursor: pointer;
+    }
+
+    iframe.blog {
+        width: 80vw;
+        height: 300px;
     }
 }
