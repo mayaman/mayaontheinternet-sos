@@ -308,13 +308,12 @@ counter"></div>
 
         <img src="./assets/bluesparkles.gif" alt="" class="fixed" id="sparkles">
 
-        <section>
+        <!-- <section>
                 <p>keep in touch, type your email...</p>
                 <iframe class="blog" src="https://mayaman.substack.com/embed" style="border:none;" frameborder="0"
                         scrolling="no"></iframe>
-        </section>
-        <p id="end-note">thank you for visiting I love you</p>
-        <br>
+        </section> -->
+        <p id="end-note">thank you for visiting I love you <3</p>
 
         <span id="cutechar"></span>
 
@@ -324,6 +323,15 @@ counter"></div>
         website 4 ur crush workshop doc</a> ♡ -->
 
         <script>
+
+                // Filter out Substack recruitment spam
+                const _originalLog = console.log.bind(console);
+                console.log = function (...args) {
+                        const msg = args.join(' ');
+                        if (msg.includes('SUBSTACK') || msg.includes('substack.com/jobs')) return;
+                        _originalLog(...args);
+                };
+
                 console.log('!!!');
                 console.log('nice');
                 console.log('leave me a secret note');
