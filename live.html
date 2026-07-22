@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="60">
     <title>LIVE</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +17,6 @@
         overflow: hidden;
     }
 
-
     iframe {
         width: 100vw;
         height: 100vh;
@@ -28,8 +27,23 @@
 
 <body>
 
-    <iframe src="https://redshoes.dance/" allowfullscreen loading="lazy">
-    </iframe>
+    <iframe id="live-frame" allowfullscreen loading="lazy"></iframe>
+
+    <script>
+        const websites = [
+            "https://redshoes.dance/",
+            "https://pureinformation.stream/",
+            "https://readitandweep.live/",
+            "https://shiftrealityinstantlyverypowerful.space/",
+            "https://dresscode.rodeo/",
+            "https://everythingidoiswrongeverythingidoisreal.fyi/",
+            "https://fakeittillyoumakeit.lol/live/",
+            "https://trustexercise.watch/"
+        ];
+
+        const randomWebsite = websites[Math.floor(Math.random() * websites.length)];
+        document.getElementById("live-frame").src = randomWebsite;
+    </script>
 
 </body>
 
