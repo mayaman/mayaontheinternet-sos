@@ -6,15 +6,30 @@
     <title>LIVE</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    html,
+    body {
+        max-width: 100%;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+
+    iframe {
+        width: 100vw;
+        height: 100vh;
+        border: 0;
+        display: block;
+    }
+</style>
 
 <body>
-    <main class="browser-walk">
-        <h1>LIVE FROM PALO ALTO !!!</h1>
-        <h1><a target="_blank" href="https://www.are.na/maya-man/taking-the-browser-for-a-walk-2">taking the browser for
-                a walk</a></h1>
-        <h5>Maya Man</h5>
-        <img id="redshoeswalking" src="./assets/redshoes_walk.gif" alt="">
-    </main>
+
+    <iframe src="https://redshoes.dance/" allowfullscreen loading="lazy">
+    </iframe>
+
 </body>
 
 </html>
